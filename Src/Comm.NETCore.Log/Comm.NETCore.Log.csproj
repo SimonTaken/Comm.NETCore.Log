@@ -1,7 +1,32 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.2</Version>
+    <Authors>Simon</Authors>
+    <Company>SLH</Company>
+    <Description>.NET Core 文本日志管理</Description>
+    <Copyright>Sunyjie</Copyright>
+    <PackageProjectUrl>https://github.com/SimonTaken/Comm.NETCore.Log</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SimonTaken/Comm.NETCore.Log</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageReleaseNotes>自己开发测试使用，暂不支持用户用于开发环境</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageTags>AspNetCore</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+  </ItemGroup>
 
 </Project>

@@ -9,7 +9,7 @@ namespace Comm.NETCore.Log
     /// </summary>
     internal class Msg
     {
-        //日志记录的时间
+        //日志记录的时间 
         //日志记录的内容
         //日志记录的类型
 

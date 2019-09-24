@@ -20,14 +20,14 @@ namespace Comm.NETCore.Log
         //
         private static string _path = AppContext.BaseDirectory + "\\Logs";
         //日志文件保存的等级
-        private static string LogGrade = "Debug,Unknown,Information,Warning,Error,Exception,Success";// Configuration["CommLogs:LogGrade"];
-        //日志保留天数-默认31天
-        private static string LeaveCount = "100";// Configuration["CommLogs:LeaveCount"];// ConfigurationManager.AppSettings["LeaveCount"] ?? "31";
+        private static string LogGrade = "Debug,Unknown,Information,Warning,Error,Exception,Success";
+        //日志保留天数-默认100天
+        private static string LeaveCount = "100";
         //日志写入线程的控制标记
         private static bool _state;
         //日志记录的类型
         //private static LogType _type;
-        private static string LogTypeStr = "Daily";//Configuration["CommLogs:LogFormat"];//  ConfigurationManager.AppSettings["LogFormat"] ?? "Daily";
+        private static string LogTypeStr = "Daily";
         //日志文件生命周期的时间标记
         private static DateTime _timeSign;
         //日志文件写入流对象
@@ -40,12 +40,13 @@ namespace Comm.NETCore.Log
             //string aaaa = "F:\\notebook\\haha\\";//路径的正确写法 
             : this(_path)
         {
-            //Configuration = new ConfigurationBuilder()
-            //.Add(new JsonConfigurationSource { Path = "appsettings.json", ReloadOnChange = true })
-            //.Build();
+
             //LogGrade = Configuration.GetSection("CommLogs")["LogGrade"];
             //LeaveCount = Configuration["CommLogs:LeaveCount"];
             //LogTypeStr = Configuration["CommLogs:LogFormat"];
+            //ConfigHelper.GetSectionValue("key");
+            LogGrade = ConfigHelper.GetSectionValue("LogGrade");
+
         }
         //private Log(IConfiguration configuration)
         ////string aaaa = "F:\\notebook\\haha\\";//路径的正确写法 
@@ -257,7 +258,7 @@ namespace Comm.NETCore.Log
         /// <param name="type">信息类型</param>
         public static void Write(string text, MsgType type)
         {
-            var log = new Log();
+            //var log = new Log();
             Write(new Msg(text, type));
         }
         #endregion
